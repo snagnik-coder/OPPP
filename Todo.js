@@ -2,16 +2,6 @@ let todoItemsContainer = document.getElementById("todoItemsContainer");
 let addTodoButton = document.getElementById("addTodoButton");
 let saveTodoButton = document.getElementById("saveTodoButton");
 
-function getTodoListFromLocalStorage() {
-  let stringifiedTodoList = localStorage.getItem("todoList");
-  let parsedTodoList = JSON.parse(stringifiedTodoList);
-  if (parsedTodoList === null) {
-    return [];
-  } else {
-    return parsedTodoList;
-  }
-}
-
 let todoList = getTodoListFromLocalStorage();
 let todosCount = todoList.length;
 
@@ -151,3 +141,23 @@ for (let todo of todoList) {
   createAndAppendTodo(todo);
 }
 
+function getTodoListFromLocalStorage() {
+  let stringifiedTodoList = localStorage.getItem("todoList");
+  let parsedTodoList = JSON.parse(stringifiedTodoList);
+  if (parsedTodoList === null) {
+    return [];
+  } else {
+    return parsedTodoList;
+  }
+}
+
+
+let searchInputEl = document.getElementById("todoUserInput");
+function searchWikipedia(event) {
+  if (event.key === "Enter") {
+    onAddTodo();
+    saveTodo();
+  }
+}
+
+searchInputEl.addEventListener("keydown", searchWikipedia);
