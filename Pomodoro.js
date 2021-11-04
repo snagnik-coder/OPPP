@@ -59,17 +59,17 @@ function start_timer() {
             // Add the message to the html
             document.getElementById("done").innerHTML =
               "Session Over!! Take a Break";
-
             // Make the html message div visible
             document.getElementById("done").classList.add("show_message");
-
             // PLay the bell sound to tell the end of session
             bell.play();
-
             first_time = 1;
           }
           session_seconds = 60;
-          session_minutes = session_minutes - 1;
+          if (session_minutes !== 0)
+          {
+            session_minutes = session_minutes - 1;
+          }
           document.getElementById("minutes").innerHTML = session_minutes;
         }
       }
