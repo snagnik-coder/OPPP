@@ -1,5 +1,5 @@
 body {
-  background: #272343;
+  background: #ffffff;
 }
 
 /* Main heading */
@@ -71,6 +71,6 @@ h2 {
 }
 
 .setz2 {
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
